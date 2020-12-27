@@ -57,7 +57,7 @@ function html(url, method, headers, request) {
   </div>
 
   <hr class="mt-4">
-  <p class="text-small mt-4">CORS tester was built by <a href="https://twitter.com/mscccc">@mscccc</a>. The code is <a href="#">available on GitHub</a>. Sponsored by <a href="https://htmlcsstoimage.com">HTML/CSS to Image</a>.</p>
+  <p class="text-small mt-4">CORS tester was built by <a href="https://twitter.com/mscccc">@mscccc</a>. The code is <a href="https://github.com/mscoutermarsh/cors-test">available on GitHub</a>. Sponsored by <a href="https://htmlcsstoimage.com">HTML/CSS to Image</a>.</p>
   </div>
 </body>`
 }
@@ -89,7 +89,7 @@ function renderResult(headers) {
     </p>
 
     <h3>What does this site do?</h3>
-    <p>This site will make a test request to the URL and check if it has valid CORS headers. If it does, you should be good to go when using it in a browser. This website is <a href="">open source and available here.</a></p>
+    <p>This site will make a test request to the URL and check if it has valid CORS headers. If it does, you should be good to go when using it in a browser. This website is <a href="https://github.com/mscoutermarsh/cors-test">open source and available here.</a></p>
 
     <h3>Which HTTP method should I use?</h3>
     <p>If you're loading a script or font, you'll want <code>GET</code>. If you're sending an AJAX request to a URL, you probably want <code>OPTIONS</code> for checking the preflight request. The other options are there just incase you need them.</p>`
