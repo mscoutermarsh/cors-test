@@ -8,6 +8,12 @@ function html(url, method, headers, request) {
   return `<!DOCTYPE html>
   <head>
     <title>CORS Tester - Test a URL for valid CORS headers</title>
+    <meta name="title" content="CORS Tester - Test a URL for valid CORS headers">
+    <meta name="description" content="Use this little tool to test a URLs CORS headers. Test CORS by HTTP method. Shows header information and gives tips on fixing CORS issues.">
+    <meta name="keywords" content="cors, test, http">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
   </head>
 <body class="bg-gray">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
