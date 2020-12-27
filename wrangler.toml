@@ -1,0 +1,6 @@
+name = "cors-test"
+type = "javascript"
+workers_dev = false
+account_id = "fadc7c4786d4e9b9ef650985a9282c82"
+route = "cors-test.codehappy.dev/*"
+zone_id = "65ed588d2ccd9e459e536a14ceeaf031"
