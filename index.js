@@ -17,6 +17,9 @@ function html(url, method, headers, request) {
     <meta name="language" content="English">
     <meta name="twitter:image" content="https://hcti.io/v1/image/6f4d48fa-3e79-4232-9373-be950cdc7d75">
     <meta name="og:image" content="https://hcti.io/v1/image/6f4d48fa-3e79-4232-9373-be950cdc7d75">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CORS Tester - Test a URL for valid CORS headers" />
+    <meta name="twitter:description" content="Use this little tool to test a URLs CORS headers." />
     <link rel="icon" href="https://mikecoutermarsh.com/favicon.ico">
   </head>
 <body class="bg-gray">
