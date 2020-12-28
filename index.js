@@ -10,6 +10,7 @@ function html(url, method, headers, request) {
     <title>CORS Tester - Test a URL for valid CORS headers</title>
     <meta name="title" content="CORS Tester - Test a URL for valid CORS headers">
     <meta name="description" content="Use this little tool to test a URLs CORS headers. Test CORS by HTTP method. Shows header information and gives tips on fixing CORS issues.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="cors, test, http">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
