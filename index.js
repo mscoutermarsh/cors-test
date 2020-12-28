@@ -17,6 +17,7 @@ function html(url, method, headers, request) {
     <meta name="language" content="English">
     <meta name="twitter:image" content="https://hcti.io/v1/image/6f4d48fa-3e79-4232-9373-be950cdc7d75">
     <meta name="og:image" content="https://hcti.io/v1/image/6f4d48fa-3e79-4232-9373-be950cdc7d75">
+    <link rel="icon" href="https://mikecoutermarsh.com/favicon.ico">
   </head>
 <body class="bg-gray">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
