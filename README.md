@@ -1,5 +1,5 @@
 # CORS Tester
-The code for [cors-test.codehappy.dev](cors-test.codehappy.dev). A tiny tool for checking if your CORS headers are setup correctly.
+The code for [cors-test.codehappy.dev](https://cors-test.codehappy.dev). A tiny tool for checking if your CORS headers are setup correctly.
 
 <img src="https://github.com/mscoutermarsh/cors-test/blob/main/screenshot.png?raw=true" width="500px" />
 
