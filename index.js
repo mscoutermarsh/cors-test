@@ -31,8 +31,8 @@ function html(url, method, headers, request) {
         <label for="example-text">URL</label>
       </div>
       <div class="form-group-body mb-2">
-        <input class="form-control input-monospace input-lg" name="url" type="url" required value="${url}" autofocus placeholder="https://codehappy.dev" id="example-text" />
-        <select class="form-select" name="method" aria-label="HTTP method">
+        <input class="form-control input-monospace mt-1" name="url" type="url" required value="${url}" autofocus placeholder="https://codehappy.dev" id="example-text" />
+        <select class="form-select mt-1 input-monospace" name="method" aria-label="HTTP method">
           <option value="get" ${ isSelected(method,"get") }>
           GET
           </option>
