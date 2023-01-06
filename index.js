@@ -4,7 +4,7 @@ addEventListener('fetch', event => {
 
 const CORS_HEADERS_REGEX = /(Access-Control-Allow-Methods)|(Access-Control-Allow-Headers)|(Access-Control-Allow-Origin)|(Access-Control-Max-Age)|(Access-Control-Allow-Credentials)/i
 
-function html(url, method, headers, request) {
+function html(url, origin, method, headers, request) {
   return `<!DOCTYPE html>
   <head>
     <title>CORS Tester - Test a URL for valid CORS headers</title>
@@ -31,11 +31,17 @@ function html(url, method, headers, request) {
 
   <form>
     <div class="form-group">
-      <div class="form-group-header">
-        <label for="example-text">URL</label>
-      </div>
       <div class="form-group-body mb-2">
+        <label for="example-text">URL</label>
+        <br/>
         <input class="form-control input-monospace mt-1" name="url" type="url" required value="${url}" autofocus placeholder="https://codehappy.dev" id="example-text" />
+        <br/>
+        <label for="origin">Origin - If your CORS setup is not using a wildcard then this should be a domain that matches your AllowedOrigins</label>
+        <br/>
+        <input class="form-control input-monospace mt-1" name="origin" type="url" required value="${origin ? origin : "https://cors-test.codehappy.dev/"}" autofocus id="origin" />
+        <br/>
+        <label for="example-text">Method</label>
+        <br/>
         <select class="form-select mt-1 input-monospace" name="method" aria-label="HTTP method">
           <option value="get" ${ isSelected(method,"get") }>
           GET
@@ -125,15 +131,16 @@ async function handleRequest(request) {
   const { searchParams } = new URL(request.url)
   let url = searchParams.get('url')
   let method = searchParams.get('method') || "get"
+  let origin = searchParams.get('origin')
   let headers = null
 
   if (isValidHttpUrl(url)) {
-    headers = await getHeaders(url, method)
+    headers = await getHeaders(url, method, origin)
   } else {
     url = ''
   }
 
-  return new Response(html(url, method, headers, request), {
+  return new Response(html(url, origin, method, headers, request), {
     headers: {
       "content-type": "text/html;charset=UTF-8",
       "Content-Security-Policy": "script-src none",
@@ -219,9 +226,9 @@ addEventListener("fetch", event => {
   return event.respondWith(handleRequest(event.request))
 })
 
-async function getHeaders(url, method) {
+async function getHeaders(url, method, origin) {
   try {
-    const response = await fetch(url, { method: method })
+    const response = await fetch(url, { method: method, headers: {"Origin": origin} })
     return response.headers
   } catch {
     return new Headers
