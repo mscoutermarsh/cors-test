@@ -34,12 +34,12 @@ function html(url, origin, method, headers, request) {
       <div class="form-group-body mb-2">
         <label for="example-text">URL</label>
         <br/>
-        <input class="form-control input-monospace mt-1" name="url" type="url" required value="${url}" autofocus placeholder="https://codehappy.dev" id="example-text" />
+        <input class="form-control input-monospace mt-1 mb-2" name="url" type="url" required value="${url}" autofocus placeholder="https://codehappy.dev" id="example-text" />
         <br/>
-        <label for="origin">Origin - If your CORS setup is not using a wildcard then this should be a domain that matches your AllowedOrigins</label>
+        <label for="origin">Origin</label>
         <br/>
         <input class="form-control input-monospace mt-1" name="origin" type="url" required value="${origin ? origin : "https://cors-test.codehappy.dev/"}" autofocus id="origin" />
-        <br/>
+        <p class="text-small mt-2">If your CORS setup is not using a wildcard then this should be a domain that matches your AllowedOrigins</p>
         <label for="example-text">Method</label>
         <br/>
         <select class="form-select mt-1 input-monospace" name="method" aria-label="HTTP method">
