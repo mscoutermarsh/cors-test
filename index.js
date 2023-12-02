@@ -129,15 +129,27 @@ ${renderHeaders(headers)}
 
 async function handleRequest(request) {
   const { searchParams } = new URL(request.url)
-  let url = searchParams.get('url')
+  let url = searchParams.get('url') || ''
   let method = searchParams.get('method') || "get"
-  let origin = searchParams.get('origin')
+  let origin = searchParams.get('origin') || "https://cors-test.codehappy.dev/"
   let headers = null
 
-  if (isValidHttpUrl(url)) {
-    headers = await getHeaders(url, method, origin)
-  } else {
-    url = ''
+  if (url !== '' && !isValidHttpUrl(url)) {
+    return new Response("Invalid URL provided", { status: 400, headers: { "content-type": "text/plain" } });
+  }
+
+  if (url !== '') {
+    headers = await getHeaders(url, method, origin);
+  }
+
+  if (!isValidHttpUrl(origin)) {
+    return new Response("Invalid origin provided", { status: 400, headers: { "content-type": "text/plain" } });
+  }
+
+  // Validate HTTP method
+  const validMethods = ["get", "post", "put", "patch", "head", "options"];
+  if (!validMethods.includes(method.toLowerCase())) {
+    return new Response("Invalid HTTP method provided", { status: 400, headers: { "content-type": "text/plain" } });
   }
 
   return new Response(html(url, origin, method, headers, request), {
